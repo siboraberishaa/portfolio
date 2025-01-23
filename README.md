@@ -1,4 +1,4 @@
-# # Terminal Portfolio
+## Terminal Portfolio
 
 A interactive portfolio website designed to look like a terminal, complete with commands, projects, and a hidden Snake game!  
 
