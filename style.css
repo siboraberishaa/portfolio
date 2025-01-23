@@ -122,6 +122,32 @@ body {
     text-decoration: none;
 }
 
+/* Snake Game Styles */
+#snake-game {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e1e1e;
+    border: 2px solid #65b587;
+    display: none;
+    z-index: 1000;
+    touch-action: none;
+}
+
+#game-canvas {
+    border: 1px solid #2d2b55;
+}
+
+.game-controls {
+    color: #65b587;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 0;
