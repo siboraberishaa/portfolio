@@ -215,29 +215,29 @@ class SnakeGame {
         // console.log("Food position:", this.food);
     }
 
-    gameOver(isWin = false) {
-        if (this.ended) return;
-        this.ended = true;
+    // gameOver(isWin = false) {
+    //     if (this.ended) return;
+    //     this.ended = true;
 
-        clearInterval(this.gameLoop);
-        document.getElementById('snake-game').style.display = 'none';
+    //     clearInterval(this.gameLoop);
+    //     document.getElementById('snake-game').style.display = 'none';
 
-        // Restore terminal input
-        document.querySelector('.command-line').classList.remove('hidden');
-        document.getElementById('user-input').focus();
+    //     // Restore terminal input
+    //     document.querySelector('.command-line').classList.remove('hidden');
+    //     document.getElementById('user-input').focus();
 
-        const message = isWin
-            ? `You Win! Perfect Score: ${this.score}`
-            : `Game Over! Final Score: ${this.score}`;
+    //     const message = isWin
+    //         ? `You Win! Perfect Score: ${this.score}`
+    //         : `Game Over! Final Score: ${this.score}`;
 
-        const outputDiv = document.createElement('div');
-        outputDiv.className = 'output';
-        outputDiv.textContent = message;
-        output.appendChild(outputDiv);
+    //     const outputDiv = document.createElement('div');
+    //     outputDiv.className = 'output';
+    //     outputDiv.textContent = message;
+    //     output.appendChild(outputDiv);
 
-        document.removeEventListener('keydown', gameKeyHandler);
-        snakeGame = null;
-    }
+    //     document.removeEventListener('keydown', gameKeyHandler);
+    //     snakeGame = null;
+    // }
 
 
     handleTouchStart(e) {
@@ -277,44 +277,77 @@ class SnakeGame {
 let snakeGame = null;
 
 function startSnakeGame() {
-    if (snakeGame) snakeGame.gameOver();
+  if (snakeGame) snakeGame.gameOver();
 
-    const gameContainer = document.getElementById('snake-game');
-    const gameControls = document.querySelector('.game-controls');
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const gameContainer = document.getElementById('snake-game');
+  const terminal = document.getElementById('terminal');
+  const body = document.body;
 
-    gameControls.textContent = isMobile
-    ? "Swipe to move the snake | Lose to exit"
-    : "Use arrow keys to move | ESC to exit";
+  // Disable interactions for the rest of the page
+  terminal.style.pointerEvents = 'none'; // Disable pointer events
+  body.style.overflow = 'hidden'; // Disable scrolling
 
+  // Show the Snake game container
+  gameContainer.style.display = 'block';
 
-    gameContainer.style.display = 'block';
+  // Hide terminal input
+  document.querySelector('.command-line').classList.add('hidden');
+  document.getElementById('user-input').blur();
 
-    // Hide terminal input
-    document.querySelector('.command-line').classList.add('hidden');
-    document.getElementById('user-input').blur();
+  snakeGame = new SnakeGame();
 
-    snakeGame = new SnakeGame();
+  // Mobile event listeners
+  gameContainer.addEventListener('touchstart', (e) => {
+      e.stopPropagation(); // Prevent event propagation
+      snakeGame.handleTouchStart(e);
+  }, { passive: true });
 
-    // Mobile event listeners
-    gameContainer.addEventListener('touchstart', (e) => {
-        e.stopPropagation(); // Prevent event propagation
-        snakeGame.handleTouchStart(e);
-    }, { passive: true });
+  gameContainer.addEventListener('touchend', (e) => {
+      e.stopPropagation(); // Prevent event propagation
+      snakeGame.handleTouchEnd(e);
+  });
 
-    gameContainer.addEventListener('touchend', (e) => {
-        e.stopPropagation(); // Prevent event propagation
-        snakeGame.handleTouchEnd(e);
-    });
+  snakeGame.gameLoop = setInterval(() => {
+      snakeGame.moveSnake();
+  }, 150);
 
-    snakeGame.gameLoop = setInterval(() => {
-        snakeGame.moveSnake();
-    }, 150);
-
-    snakeGame.drawGame();
-    document.addEventListener('keydown', gameKeyHandler);
+  snakeGame.drawGame();
+  document.addEventListener('keydown', gameKeyHandler);
 }
 
+SnakeGame.prototype.gameOver = function (isWin = false) {
+  if (this.ended) return;
+  this.ended = true;
+
+  clearInterval(this.gameLoop);
+
+  const gameContainer = document.getElementById('snake-game');
+  const terminal = document.getElementById('terminal');
+  const body = document.body;
+
+  // Re-enable interactions for the rest of the page
+  terminal.style.pointerEvents = 'auto'; // Enable pointer events
+  body.style.overflow = ''; // Re-enable scrolling
+
+  // Hide the Snake game container
+  gameContainer.style.display = 'none';
+
+  // Restore terminal input
+  document.querySelector('.command-line').classList.remove('hidden');
+  document.getElementById('user-input').focus();
+
+  const message = isWin
+      ? `You Win! Perfect Score: ${this.score}`
+      : `Game Over! Final Score: ${this.score}`;
+
+  const outputDiv = document.createElement('div');
+  outputDiv.className = 'output';
+  outputDiv.textContent = message;
+  output.appendChild(outputDiv);
+
+  document.removeEventListener('keydown', gameKeyHandler);
+  snakeGame = null;
+};
 
 
 
