@@ -9,15 +9,28 @@ const commands = {
         },
     },
     "about-me": {
-      description: "Who am I and what do I do",
-      execute: () => {
-        return "Hi, I'm Sibora Berisha ;)\ncode wizard by day, bug exterminator by night. My superpowers include wielding the MERN stack (MongoDB, Express, React(js and native), Node) and summoning Django + PostgreSQL to create apps that don’t just work—they wow. My goal? To build digital experiences so smooth they make butter jealous :). When I’m not busy convincing my code to cooperate, you’ll find me geeking out over new tech or earning extra nerd points at gatherings or hackathons. ";
-      },
+        description: "Who am I and what do I do",
+        execute: () => {
+            const asciiArt = `
+███████╗██╗██████╗  ██████╗ ██████╗  █████╗ 
+██╔════╝██║██╔══██╗██╔═══██╗██╔══██╗██╔══██╗
+███████╗██║██████╔╝██║   ██║██████╔╝███████║
+╚════██║██║██╔══██╗██║   ██║██╔══██╗██╔══██║
+███████║██║██████╔╝╚██████╔╝██║  ██║██║  ██║
+╚══════╝╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+            `;
+
+            const description = `Hi, I'm Sibora Berisha ;)
+Code wizard by day, bug exterminator by night. My superpowers include wielding the MERN stack (MongoDB, Express, React(js and native), Node) and summoning Django + PostgreSQL to create apps that don’t just work—they wow. My goal? To build digital experiences so smooth they make butter jealous :).
+When I’m not busy convincing my code to cooperate, you’ll find me geeking out over new tech or earning extra nerd points at gatherings or hackathons.`;
+
+            return `<pre>${asciiArt}</pre>\n${description}`;
+        },
     },
     ls: {
       description: "List all sections",
       execute: () => {
-        return "Available sections:\n\n- about-me\n\n- projects\n\n- skills\n\n- contact\n\n - cv";
+        return "Available sections:\n\n- about-me\n- projects\n- skills\n- contact\n - cv";
       },
     },
     clear: {
@@ -46,16 +59,23 @@ const commands = {
       },
     },
     cv: {
-      description: "Download my CV",
+      description: "View my CV",
       execute: () => {
-        return "https://cvlink.com";
+        return "View my CV here: \nhttps://rb.gy/i753z4";
       },
     },
     snake: {
         description: "Start classic Snake game (Easter egg)",
         execute: () => {
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
             startSnakeGame();
-            return "Starting Snake game... Use arrow keys to control!";
+
+            if (isMobile) {
+                return "Starting Snake game... Swipe to move the snake!";
+            } else {
+                return "Starting Snake game... Use arrow keys to control!";
+            }
         },
     }
   };
@@ -123,7 +143,7 @@ class SnakeGame {
             );
         });
 
-        console.log("Canvas dimensions:", this.canvas.width, this.canvas.height);
+        // console.log("Canvas dimensions:", this.canvas.width, this.canvas.height);
 
         // Draw food
         if (this.food) {
@@ -192,7 +212,7 @@ class SnakeGame {
         const randomIndex = Math.floor(Math.random() * emptyTiles.length);
         this.food = emptyTiles[randomIndex];
 
-        console.log("Food position:", this.food);
+        // console.log("Food position:", this.food);
     }
 
     gameOver(isWin = false) {
@@ -260,6 +280,14 @@ function startSnakeGame() {
     if (snakeGame) snakeGame.gameOver();
 
     const gameContainer = document.getElementById('snake-game');
+    const gameControls = document.querySelector('.game-controls');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    gameControls.textContent = isMobile
+    ? "Swipe to move the snake | Lose to exit"
+    : "Use arrow keys to move | ESC to exit";
+
+
     gameContainer.style.display = 'block';
 
     // Hide terminal input
@@ -343,9 +371,8 @@ function gameKeyHandler(e) {
   
   function displayWelcomeMessages() {
     const welcomeMessages = [
-      'Welcome',
-      'Starting the server...',
-      'You can run several commands:',
+      'Starting the server',
+      'You can run several commands',
       'Type \'help\' to see all available commands.'
     ];
   

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #2d2b55;
+    background-color: #181d28;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -14,25 +14,36 @@ body {
     height: 100vh;
 }
 
+pre {
+    font-family: monospace;
+    color: #00ffcc; /* A nice aqua color */
+    line-height: 1.2;
+    text-align: center;
+}
+
+
 .container {
-    background-color: #1e1e1e;
+    background-color: #50505a;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 800px;
     height: 500px;
     display: flex;
+    /* padding-top: 10px; */
     flex-direction: column;
 }
 
 .container p {
     text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 #terminal {
     flex-grow: 1;
     background-color: #1e1e1e;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     padding: 20px;
     font-size: 16px;
     overflow-y: auto;
@@ -148,9 +159,13 @@ body {
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
     body {
         padding: 0;
+    }
+
+    pre{
+        font-size: 10px;
     }
 
     .container {
@@ -160,12 +175,24 @@ body {
         max-width: none;
     }
 
+    #user-input {
+        font-size: 12px;
+    }
+
     #terminal {
         border-radius: 0;
         padding: 16px;
+        font-size: 12px;
     }
     
     .command-line {
         gap: 4px;
     }
+
+    .game-controls{
+        bottom: -60px;
+        background-color: #1e1e1e;
+    }
+    
+
 }
