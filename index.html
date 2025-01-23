@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p>SiboraBerisha@Portfolio~</p>
+        <div id="terminal">
+            <div id="output"></div> 
+            <div class="command-line hidden">
+                <span class="prompt"># user in ~/portfolio</span>
+                <div class="input-line">
+                    <input type="text" id="user-input" autofocus>
+                    <div id="autocomplete-suggestion" class="autocomplete-suggestion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

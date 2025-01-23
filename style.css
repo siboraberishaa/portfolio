@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background-color: #2d2b55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container p {
+    text-align: center;
+}
+
+#terminal {
+    flex-grow: 1;
+    background-color: #1e1e1e;
+    border-radius: 6px;
+    padding: 20px;
+    font-size: 16px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #65b587 #1e1e1e;
+}
+
+#terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+#terminal::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background-color: #65b587;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.prompt {
+    color: #65b587;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.input-line {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#user-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    outline: none;
+    padding: 2px 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+.autocomplete-suggestion {
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    margin-left: -1px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.output {
+    color: #fff;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.output a {
+    color: #64d6ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.output a:hover {
+    color: #45b3d6;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+        max-width: none;
+    }
+
+    #terminal {
+        border-radius: 0;
+        padding: 16px;
+    }
+    
+    .command-line {
+        gap: 4px;
+    }
+}
