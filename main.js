@@ -61,7 +61,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     cv: {
       description: "View my CV",
       execute: () => {
-        return "View my CV here: \nhttps://rb.gy/i753z4";
+        return "View my CV here: \nhttps://sibora-berisha-cv.tiiny.site";
       },
     },
     snake: {
