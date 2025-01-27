@@ -55,7 +55,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     contact: {
       description: "Get my contact information",
       execute: () => {
-        return "Contact Information:\n\nEmail: siboraberisha748@gmail.com\nGitHub: https://github.com/siboraberishaa\nLinkedIn: https://linkedin.com/in/siboraberisha";
+        return "Contact Information:\n\nEmail: siboraberisha@gmail.com\nGitHub: https://github.com/siboraberishaa\nLinkedIn: https://linkedin.com/in/siboraberisha";
       },
     },
     cv: {
