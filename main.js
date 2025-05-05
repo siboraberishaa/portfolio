@@ -43,7 +43,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     projects: {
       description: "List of my projects",
       execute: () => {
-        return "My Projects:\n\n1. Rock, paper, scissors game - https://rock-paper-scissors-game-alpha-green.vercel.app/\n2. Investment calculator- https://investment-calculator-eight.vercel.app/\n3. FlappyMali-Mobile game - https://github.com/siboraberishaa/FlappyMali\n4. Bulls and Cows-Number game - https://lojaenumrave.netlify.app/\n5. Markdown NotesApp - https://markdownnotesapp.netlify.app/";
+        return "My Projects:\n\n1. Rock, paper, scissors game - https://rock-paper-scissors-game-alpha-green.vercel.app/\n2. Investment calculator- https://investment-calculator-eight.vercel.app/\n3. FlappyMali-Mobile game - https://github.com/siboraberishaa/FlappyMali\n4. Bulls and Cows-Number game - https://lojaenumrave.netlify.app/\n5. Markdown NotesApp - https://markdownnotesapp.netlify.app/\n6. Website for the client: SWISS-Pastrim Kimik & Lavanderi- https://swisspastrimkimik.com/\n7. Website for the client: Granex Sh.P.K- https://www.granex.shop/\n8. Website for the hackathon MerrBio, Tiranë 2025- https://github.com/siboraberishaa/merrbio-frontend";
       },
     },
     skills: {
