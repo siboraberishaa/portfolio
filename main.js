@@ -21,7 +21,7 @@ const commands = {
             `;
 
             const description = `Hi, I'm Sibora Berisha ;)
-Code wizard by day, bug exterminator by night. My superpowers include wielding the MERN stack (MongoDB, Express, React(js and native), Node) and summoning Django + PostgreSQL to create apps that don’t just work—they wow. My goal? To build digital experiences so smooth they make butter jealous :).
+Code wizard by day, bug exterminator by night. My superpowers include wielding the MERN stack (MongoDB, Express, React(js and native), Node) and summoning Django + PostgreSQL to create apps that don’t just work, they wow. My goal? To build digital experiences so smooth they make butter jealous :).
 When I’m not busy convincing my code to cooperate, you’ll find me geeking out over new tech or earning extra nerd points at gatherings or hackathons.`;
 
             return `<pre>${asciiArt}</pre>\n${description}`;
@@ -43,13 +43,13 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     projects: {
       description: "List of my projects",
       execute: () => {
-        return "My Projects:\n\n1. Rock, paper, scissors game - https://rock-paper-scissors-game-alpha-green.vercel.app/\n2. Investment calculator- https://investment-calculator-eight.vercel.app/\n3. FlappyMali-Mobile game - https://github.com/siboraberishaa/FlappyMali\n4. Bulls and Cows-Number game - https://lojaenumrave.netlify.app/\n5. Markdown NotesApp - https://markdownnotesapp.netlify.app/\n6. Website for the client: SWISS-Pastrim Kimik & Lavanderi- https://swisspastrimkimik.com/\n7. Website for the client: Granex Sh.P.K- https://www.granex.shop/\n8. Website for the hackathon MerrBio, Tiranë 2025- https://github.com/siboraberishaa/merrbio-frontend";
+        return "My Projects:\n\n1. Rock, paper, scissors game - https://rock-paper-scissors-game-alpha-green.vercel.app/\n2. Investment calculator- https://investment-calculator-eight.vercel.app/\n3. FlappyMali-Mobile game - https://github.com/siboraberishaa/FlappyMali\n4. Bulls and Cows-Number game - https://lojaenumrave.netlify.app/\n5. Markdown NotesApp - https://markdownnotesapp.netlify.app/\n6. Website for the client: SWISS-Pastrim Kimik & Lavanderi- https://swisspastrimkimik.com/\n7. Website for the client: Granex Sh.P.K- https://www.granex.shop/\n8. Website for the hackathon MerrBio, Tiranë 2025- https://github.com/siboraberishaa/merrbio-frontend\n9. Website for Shfmu \"26 Marsi\" - Landovice- https://shfmu26marsilandovice.com";
       },
     },
     skills: {
       description: "View my technical skills",
       execute: () => {
-        return "Technical Skills:\n\n- Programming Languages: JavaScript (ES6+), Python, Java.\n- Frameworks: ReactJS, React Native, NodeJS, ExpressJs Django.\n- Databases: MongoDB, PostgreSQL, SQLite.\n- Tools: UI(Ant Design, Bootstrap, Tailwind, MUI), Payment integration(Stripe), Git/GitHub, RESTful APIs.";
+        return "Technical Skills:\n\n- Programming Languages: JavaScript (ES6+), Python, Java.\n- Frameworks: ReactJS, React Native, NodeJS, ExpressJs Django.\n- Databases: MySQL, MongoDB, PostgreSQL, SQLite.\n- Tools: UI(Ant Design, Bootstrap, Tailwind, MUI), Payment integration(Stripe), Git/GitHub, RESTful APIs. \n- Lately, I have been exploring DevOps practices and cloud platforms with Docker, AWS, Terraform and CI/CD pipelines, where I finished some projects in the apprentice program.";
       },
     },
     contact: {
@@ -61,7 +61,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     cv: {
       description: "View my CV",
       execute: () => {
-        return "View my CV here: \nhttps://sibora-berisha-cv.tiiny.site";
+        return "View my CV here: \nhttps://cv.siboraberisha.online";
       },
     },
     snake: {
