@@ -22,7 +22,8 @@ const commands = {
 
             const description = `Hi, I'm Sibora Berisha ;)
 Code wizard by day, bug exterminator by night. My superpowers include wielding the MERN stack (MongoDB, Express, React(js and native), Node) and summoning Django + PostgreSQL to create apps that don’t just work, they wow. My goal? To build digital experiences so smooth they make butter jealous :).
-When I’m not busy convincing my code to cooperate, you’ll find me geeking out over new tech or earning extra nerd points at gatherings or hackathons.`;
+When I’m not busy convincing my code to cooperate, you’ll find me geeking out over new tech or earning extra nerd points at gatherings or hackathons.
+Lately I've also been leveling up as a DevOps Engineer — deploying and maintaining AWS cloud infrastructure, automating with Terraform and CI/CD pipelines, containerizing with Docker, and setting up servers (cloud and self-managed alike). Type 'devops' or 'experience' to see more.`;
 
             return `<pre>${asciiArt}</pre>\n${description}`;
         },
@@ -30,7 +31,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     ls: {
       description: "List all sections",
       execute: () => {
-        return "Available sections:\n\n- about-me\n- projects\n- skills\n- contact\n - cv";
+        return "Available sections:\n\n- about-me\n- experience\n- projects\n- skills\n- devops\n- contact\n - cv";
       },
     },
     clear: {
@@ -49,7 +50,19 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     skills: {
       description: "View my technical skills",
       execute: () => {
-        return "Technical Skills:\n\n- Programming Languages: JavaScript (ES6+), Python, Java.\n- Frameworks: ReactJS, React Native, NodeJS, ExpressJs Django.\n- Databases: MySQL, MongoDB, PostgreSQL, SQLite.\n- Tools: UI(Ant Design, Bootstrap, Tailwind, MUI), Payment integration(Stripe), Git/GitHub, RESTful APIs. \n- Lately, I have been exploring DevOps practices and cloud platforms with Docker, AWS, Terraform and CI/CD pipelines, where I finished some projects in the apprentice program.";
+        return "Technical Skills:\n\n- Programming Languages: JavaScript (ES6+), Python, Java.\n- Frameworks: ReactJS, React Native, NodeJS, ExpressJs Django.\n- Databases: MySQL, MongoDB, PostgreSQL, SQLite.\n- Tools: UI(Ant Design, Bootstrap, Tailwind, MUI), Payment integration(Stripe), Git/GitHub, RESTful APIs. \n- Cloud & Infrastructure: AWS: EC2, RDS and RDS Custom, EFS and Transfer Family, S3, IAM, DynamoDB and lots more, cloud resource provisioning and credential management.\n- Server Administration: Linux system administration(A GEEK LIKE ME, SHOULD ALSO HAVE LINUX AS MAIN OPERATING SYSTEM ON PC ;)), on-premise and VPS server setup/maintenance, SSH & networking configuration.\n- Containerization: Docker, Docker Compose, container image management and troubleshooting.\n- IaC & CI/CD: Terraform, CI/CD pipeline design and maintenance, automated deployment workflows.\n- Scripting & Automation: Bash, Python, PowerShell for operational automation.\n- Monitoring & Reliability: system health/performance monitoring, backup and recovery practices.\n\nType 'devops' for more on my DevOps work.";
+      },
+    },
+    experience: {
+      description: "View my work experience",
+      execute: () => {
+        return "Work Experience:\n\n1. DevOps Engineer — Polymath Services L.L.C. (June 2025 - Present)\n   - Deploy, configure, and maintain applications and cloud infrastructure on AWS.\n   - Set up and administer Linux servers both in the cloud and on self-managed/VPS environments.\n   - Design and maintain CI/CD pipelines to automate build, test, and deployment workflows.\n   - Use Terraform and Infrastructure as Code (IaC) to provision and manage cloud resources.\n   - Build and maintain containerized applications with Docker(Now I have also stared to dig a lot in RIG MANAGER too), including multi-container environments.\n   - Apply security, access-control, backup, and recovery best practices.\n   - Monitor system health, performance, and resource usage; maintain technical documentation and runbooks.\n\n2. Software Developer — TEL COMMUNICATIONS L.L.C. (June 2022 - June 2025)\n   - Developed a full-stack eCommerce web app with auth, email verification, and Stripe payments.\n   - Built and managed admin dashboards for eCommerce and mobile applications.\n   - Built cross-platform mobile apps with React Native (Expo), backed by Node.js/Express.js or Django.\n\nType 'cv' for the full CV.";
+      },
+    },
+    devops: {
+      description: "More on my DevOps experience",
+      execute: () => {
+        return "DevOps Focus:\n\nI'm actively growing into a DevOps/cloud infrastructure role on top of my full-stack background. Day to day this looks like:\n\n- Deploying and maintaining infrastructure on AWS.\n- Provisioning cloud resources with Terraform (Infrastructure as Code).\n- Building and maintaining CI/CD pipelines for automated build/test/deploy workflows.\n- Containerizing applications with Docker & Docker Compose, including multi-container setups.\n- Setting up and administering servers beyond just the cloud too — on-premise and VPS environments, SSH access, networking (NACLs, bastion hosts), and Linux system administration.\n- Applying security, access-control, backup, and recovery best practices, including credential/key rotation.\n- Monitoring system health, performance, and resource usage, and troubleshooting across networking, storage, and compute layers.\n- Writing technical documentation and operational runbooks.\n\nType 'experience' for the full work history or 'skills' for the complete skill set.";
       },
     },
     contact: {
@@ -61,7 +74,7 @@ When I’m not busy convincing my code to cooperate, you’ll find me geeking ou
     cv: {
       description: "View my CV",
       execute: () => {
-        return "View my CV here: \nhttps://cv.siboraberisha.online";
+        return "View my CV here: \nhttps://cv.siboraberisha.live";
       },
     },
     snake: {
